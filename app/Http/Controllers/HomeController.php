@@ -12,10 +12,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
+        //dump($request->route);
         return view('home.home');
     }
 
@@ -38,9 +35,11 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        //
+        //dump($request->route()->named('home.home'));
+
+        dump('show page');
     }
 
     /**
