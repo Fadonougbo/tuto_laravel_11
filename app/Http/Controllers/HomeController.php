@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route as FacadesRoute;
 use Illuminate\Validation\Rules\Password;
 
 class HomeController extends Controller
@@ -13,6 +15,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         //dump($request->route);
+        
         return view('home.home');
     }
 
