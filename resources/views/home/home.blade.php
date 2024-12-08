@@ -8,5 +8,6 @@
 </head>
 <body>
     @includeWhen(true,'home.header')
+    <a href="{{route("socialite.signin")}}">signin github</a>
 </body>
 </html>

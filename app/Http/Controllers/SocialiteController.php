@@ -3,30 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
-use Illuminate\Support\Facades\Route as FacadesRoute;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-class HomeController extends Controller
+class SocialiteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        //dump($request->route); 
-             
-        return view('home.home');
+        dump("okok");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function signin()
     {
-        //
+        return Socialite::driver('github')->redirect();  
+        //dump("login");
+    }
+ 
+    public function authenticated()
+    {
+        dump(Socialite::driver('github')->user());
     }
 
     /**
@@ -40,11 +38,9 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
+    public function show(string $id)
     {
-        //dump($request->route()->named('home.home'));
-
-        dump('show page');
+        //
     }
 
     /**

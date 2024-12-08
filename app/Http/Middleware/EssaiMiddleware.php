@@ -18,8 +18,9 @@ class EssaiMiddleware
         /* if($request->path()==="/") {
             dump("okok");
         }
- */
-        dump('okok',$name,$age);
+ */     
+
+       /*  dump('okok',$name,$age); */
 
         return $next($request);
     }
