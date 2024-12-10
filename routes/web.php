@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
+
+Route::get("/test/api/{user}",[ApiController::class,"index"]);
 
 Route::get('/',[HomeController::class,'index'])->middleware(['essai:doe,19'])->name('home.home');
 

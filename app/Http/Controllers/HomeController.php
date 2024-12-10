@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         //dump($request->route); 
-             
+        //dump($request->user()); 
         return view('home.home');
     }
 
